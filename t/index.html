@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>t</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Amiri:ital@0;1&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:   #f7f4ee;
+    --ink:  #1c1a16;
+    --dim:  #9a9182;
+    --gold: #b8935a;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .page {
+    max-width: 420px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 2.4s ease;
+  }
+  .page.visible { opacity: 1; }
+
+  /* Arabic dedication */
+  .dedication {
+    font-family: 'Amiri', serif;
+    font-size: 1.22rem;
+    color: var(--gold);
+    text-align: center;
+    direction: rtl;
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+    margin-bottom: 0.3rem;
+    opacity: 0;
+    transition: opacity 1.8s ease;
+  }
+  .dedication.visible { opacity: 1; }
+
+  .transliteration {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-style: italic;
+    font-size: 0.72rem;
+    color: var(--dim);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 3.2rem;
+    opacity: 0;
+    transition: opacity 1.8s ease;
+  }
+  .transliteration.visible { opacity: 1; }
+
+  /* Poem */
+  .poem {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 1.01rem;
+    line-height: 2.05;
+    color: var(--ink);
+  }
+
+  .line {
+    display: block;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 1.1s ease, transform 1.1s ease;
+    white-space: nowrap;
+  }
+  .line.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stanza break */
+  .gap { display: block; height: 1.2em; }
+
+  /* Footer */
+  .footer {
+    margin-top: 3.4rem;
+    font-family: 'IM Fell English', Georgia, serif;
+    font-style: italic;
+    font-size: 0.72rem;
+    color: var(--dim);
+    letter-spacing: 0.06em;
+    opacity: 0;
+    transition: opacity 1.8s ease;
+  }
+  .footer.visible { opacity: 1; }
+
+  /* Blanked state */
+  .blanked .poem,
+  .blanked .dedication,
+  .blanked .transliteration,
+  .blanked .footer {
+    opacity: 0 !important;
+    transition: opacity 3s ease !important;
+  }
+  .blanked .remnant {
+    opacity: 1 !important;
+  }
+
+  .remnant {
+    font-family: 'Amiri', serif;
+    font-size: 0.95rem;
+    color: var(--gold);
+    direction: rtl;
+    text-align: center;
+    margin-top: 0;
+    opacity: 0;
+    transition: opacity 3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="page" id="page">
+
+  <div class="dedication" id="dedication">أنتِ العجبُ يا تخمينا</div>
+  <div class="transliteration" id="translit">anti l-ʿajabu yā takhmīnā</div>
+
+  <div class="poem" id="poem">
+    <span class="line">What torture lurks within a single thought</span>
+    <span class="line">When grown too constant; and however kind,</span>
+    <span class="line">However welcome still, the weary mind</span>
+    <span class="line">Aches with its presence. Dull remembrance taught</span>
+    <span class="gap"></span>
+    <span class="line">Remembers on unceasingly; unsought</span>
+    <span class="line">The old delight is with us but to find</span>
+    <span class="line">That all recurring joy is pain refined,</span>
+    <span class="line">Become a habit, and we struggle, caught.</span>
+    <span class="gap"></span>
+    <span class="line">You lie upon my heart as on a nest,</span>
+    <span class="line">Folded in peace, for you can never know</span>
+    <span class="line">How crushed I am with having you at rest</span>
+    <span class="line">Heavy upon my life. I love you so</span>
+    <span class="line">You bind my freedom from its rightful quest.</span>
+    <span class="line">In mercy lift your drooping wings and go.</span>
+  </div>
+
+  <div class="footer" id="footer">Amy Lowell · A Fixed Idea</div>
+
+  <div class="remnant" id="remnant">حانَ وقتُ الغداءِ</div>
+
+</div>
+
+<script>
+  // ── CONFIGURATION ──────────────────────────────────────────
+  const LINE_DELAY_MS   = 1100;   // pause between each line appearing
+  const BLANK_AFTER_MS  = 6 * 60 * 60 * 1000;  // blank after 6 hours
+  // ───────────────────────────────────────────────────────────
+
+  const page      = document.getElementById('page');
+  const ded       = document.getElementById('dedication');
+  const translit  = document.getElementById('translit');
+  const footer    = document.getElementById('footer');
+  const remnant   = document.getElementById('remnant');
+  const lines     = Array.from(document.querySelectorAll('.line:not(.gap)'));
+
+  // Check if already blanked (using sessionStorage so refresh still shows)
+  const openedAt  = localStorage.getItem('t_opened');
+  const now       = Date.now();
+
+  if (openedAt && (now - parseInt(openedAt)) > BLANK_AFTER_MS) {
+    blankNow();
+  } else {
+    if (!openedAt) localStorage.setItem('t_opened', now);
+    reveal();
+    setTimeout(blankGracefully, BLANK_AFTER_MS);
+  }
+
+  function reveal() {
+    // Page fade-in
+    requestAnimationFrame(() => {
+      page.classList.add('visible');
+    });
+
+    // Dedication
+    setTimeout(() => ded.classList.add('visible'), 600);
+    setTimeout(() => translit.classList.add('visible'), 1400);
+
+    // Lines, one by one
+    const startDelay = 2600;
+    lines.forEach((line, i) => {
+      setTimeout(() => line.classList.add('visible'), startDelay + i * LINE_DELAY_MS);
+    });
+
+    // Footer after last line
+    const footerDelay = startDelay + lines.length * LINE_DELAY_MS + 800;
+    setTimeout(() => footer.classList.add('visible'), footerDelay);
+  }
+
+  function blankGracefully() {
+    page.classList.add('blanked');
+    setTimeout(() => remnant.style.opacity = '1', 3200);
+  }
+
+  function blankNow() {
+    page.classList.add('visible');
+    page.classList.add('blanked');
+    remnant.style.transition = 'opacity 1.8s ease';
+    setTimeout(() => remnant.style.opacity = '1', 800);
+  }
+</script>
+</body>
+</html>
