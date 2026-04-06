@@ -1,3 +1,461 @@
+
+I have a friend whom I send a reminder about lunch each day (she frequently forgets to have one). Every week I chose some way to deliver this message, for example, last week I took screenshots from some movies with reminders like "lunch time!" typed over them. This week I'm experimenting with lamps. I'm thinking about translating her name, Takhmina, into visualisation that fits a lamp. Something like a numerical value that translates into radial barchart. Can you share some ideas?
+
+Mar 12
+
+Brainstormed multiple creative approaches translating name into lamp visualization
+Brainstormed multiple creative approaches translating name into lamp visualization
+What a charming weekly ritual. Here are some directions to consider:
+
+Radial bar chart (your starting idea) Map each letter to a number (simple A=1…Z=26 gives T=20, A=1, K=11, H=8, M=13, I=9, N=14, A=1), then draw 8 bars radiating from a central "bulb." Warm amber/gold colors, maybe a soft glow effect behind each bar. The unevenness of the values (that spike at T=20 surrounded by small values) actually makes for an interesting asymmetric starburst — it won't look generic.
+
+Morse code pulses Takhmina in Morse: - · - · · · · - · - · — you could render this as a lamp that's either on or off across a sequence, or as concentric rings of varying thickness/brightness. Has a nice "signal being sent to her" feeling.
+
+Filament shape Use the letter values to plot control points of a bezier curve inside a lightbulb outline — the curve becomes the filament. Letters with higher values pull the filament further in that direction. Very minimal, elegant.
+
+Lamp shade profile The 8 letter values become the radii at 8 evenly-spaced angles of a lampshade silhouette. Rotate it around the vertical axis to get a 3D-looking shade. The name is literally the shape of the object.
+
+Phonetic rhythm → light wave Takh-mi-na is three syllables with a stress pattern (TAKH-mi-na). Map that to a sine wave with amplitude and frequency variations — render it as a glowing waveform inside a bulb.
+
+Of these, I'd lean toward either the filament (most visually elegant, clearly reads as "lamp") or the radial bars with a bulb center (your original instinct, which is solid — the asymmetry of the name's values is actually an asset).
+
+Want me to build one of these as an interactive visualization you could screenshot and send?
+
+Morse code is interesting. Can you do the translation for the word "lunchtime"?
+
+Mar 12
+
+Translated "lunchtime" into individual Morse code characters
+Translated "lunchtime" into individual Morse code characters
+Here's lunchtime in Morse:
+
+Letter	Morse
+L	· — · ·
+U	· · —
+N	— ·
+C	— · — ·
+H	· · · ·
+T	—
+I	· ·
+M	— —
+E	·
+Full sequence: · — · ·  · · —  — ·  — · — ·  · · · ·  —  · ·  — —  ·
+
+What's nice visually is the contrast — H gives you four quick dots, T is a single long dash, M is two dashes, and E is just one dot. That variation in density and rhythm would make for an interesting pattern if you render it as rings or segments on a lamp face. Want me to build the visualization?
+
+What about phonetic rhythm? How would you visualize the sound of her name?
+
+Mar 12
+
+Analyzed phonetic structure and conceptualized visual representations of rhythm
+Analyzed phonetic structure and conceptualized visual representations of rhythm
+Takh-mi-na breaks down really interestingly:
+
+Stress & duration TAKH — mi — na Heavy / light / medium-trailing. A falling rhythm — it starts with force and softens. In a waveform this would look like a tall peak, a small bump, then a gentle fade.
+
+The sounds themselves
+
+T — sharp attack, a click of silence then energy
+AKH — the kh is the most unusual sound: a guttural fricative (like the Scottish "loch"), airy and scattered. This is the loudest, most textured moment
+mi — nasal + high vowel, clean and smooth
+na — open vowel trailing off, the mouth relaxes
+Visualization idea for a lamp
+
+A waveform inside a lightbulb outline where:
+
+The amplitude follows the stress (TAKH towers over the rest)
+The kh segment has a rough, hairy texture — many thin lines rather than a clean curve — to capture that fricative scatter
+mi is a clean sine curve
+na dissolves into a soft glow at the base of the bulb, the line fading out rather than ending abruptly
+The emotional effect would be: the name arrives boldly, then softens into warmth — which actually suits a lunch reminder nicely.
+
+Want me to build this as a visual?
+
+Go ahead
+
+Mar 12
+
+Envisioned aesthetic HTML visualization with thematic design elements
+Envisioned aesthetic HTML visualization with thematic design elements
+A lightbulb containing the phonetic life of her name. A few things to notice:
+
+The T is a sharp spike — the waveform shoots up from silence
+The A holds at full amplitude, the open vowel sustaining
+The KH is the most visually interesting part: the waveform becomes irregular and there are faint scattered hairlines behind it, representing that guttural fricative scatter
+mi rises gently from a nasal closure, clean sine
+na fades out — the amplitude decays and the line dissolves into the warm background rather than stopping
+The syllable labels below the base fade in opacity left to right, mirroring how the sound itself quiets. Screenshot it on a dark background and it should look nice.
+
+Takhmina lamp
+Code · HTML 
+What are the other ways to assign numerical values to name letter/sounds?
+
+Mar 12
+
+Identified numerical assignment systems for name letters
+Identified numerical assignment systems for name letters
+Several traditions and systems exist, each with a different logic:
+
+Historical / esoteric systems
+
+Gematria (Hebrew) — the original, assigns values to Hebrew letters based on their position in the alphabet, but with irregular jumps (aleph=1, yod=10, kaf=100). Used for centuries to find meaning in words. Takhmina would need transliteration first, which itself involves interpretation choices.
+Pythagorean numerology — reduces A–Z to 1–9 cyclically (A=1, B=2...I=9, J=1 again). Everything collapses to a single digit. Very reductive but produces a clean small range.
+Chaldean numerology — similar but the mapping is non-sequential, based on vibrational theory rather than alphabetic order. B=2, C=3, but then some letters share values and 9 is considered sacred and rarely assigned.
+Abjad (Arabic) — directly relevant for Takhmina since her name has Arabic roots. Each Arabic letter has a traditional numerical value inherited from Semitic counting systems. The KH (خ) = 600, which is a strikingly large number compared to everything else — would dominate any visualization dramatically.
+Phonetic / acoustic approaches
+
+Formant frequencies — every vowel has two characteristic resonant frequencies (F1, F2) measurable in Hz. The A in TAKH and the A in na are the same phoneme but with different muscular tension — you'd get slightly different values. Very precise, grounded in physics.
+IPA featural encoding — the International Phonetic Alphabet classifies every sound by binary features: [+voiced], [+nasal], [+fricative], etc. You could count how many features a sound has, or assign weights to specific features (fricatives score high, stops score low).
+Sonority scale — linguists rank sounds by acoustic energy: vowels at the top, then glides, liquids, nasals, fricatives, stops at the bottom. Takhmina's sounds would rank roughly: A(high) — KH(mid-low) — M(mid) — I(high) — N(mid) — A(high).
+Visual / geometric
+
+ASCII / Unicode code points — purely arbitrary but reproducible. T=84, A=65, K=75, H=72, M=77, I=73, N=78, A=65. The range is narrow (65–90 for capitals) so bars would be similar in height — you'd want to normalize or use the deviation from the mean.
+Keyboard position — row and column on a QWERTY layout. Gives you a 2D coordinate per letter rather than a single number, which opens up scatter plots or vector directions.
+The most visually interesting for a lamp would probably be Abjad (because that KH=600 spike would be extraordinary) or formant frequencies (because vowels and consonants produce genuinely different physical data). The most philosophically fitting, given her name's origin, is Abjad.
+
+Want to try one of these for a visualization?
+
+Give me Abjad and formant numbers (I like the latter more, but the former is interesting too)
+
+Mar 12
+
+Calculated Abjad values and mapped formant frequencies for phonetic analysis
+Calculated Abjad values and mapped formant frequencies for phonetic analysis
+Abjad (Arabic letter values)
+
+The name in Arabic script: تَخْمِينَا
+
+Sound	Letter	Abjad value
+T	ت	400
+KH	خ	600
+M	م	40
+I	ي	10
+N	ن	50
+A	ا	1
+The KH towering at 600, then everything else in the dust. That gap is almost violent — the name front-loads almost all its numerical weight into the first two sounds, then collapses.
+
+Formant frequencies (Hz)
+
+Every sound has characteristic resonance frequencies. For vowels these are precise and well-documented (F1 = mouth openness, F2 = tongue frontness). For consonants I'm giving the spectral center of gravity — where the noise or burst energy concentrates.
+
+Sound	Type	F1	F2
+T	stop burst	—	~4000
+A (takh)	open vowel	~800	~1200
+KH	velar fricative	—	~1800
+M	nasal	~280	—
+I	high front vowel	~300	~2300
+N	nasal	~280	—
+A (na)	reduced vowel	~650	~1100
+A few things that stand out: I has the most extreme F1/F2 contrast — the mouth is nearly closed (low F1) but the tongue is pushed far forward (very high F2). The two A's are slightly different because the final one is unstressed. T is nearly all energy at the top of the range, which is why it sounds so sharp. The nasals M and N are nearly identical numerically, which makes sense — the mouth configuration is almost the same.
+
+For a visualization, F2 is the more dramatic axis — it sweeps from 1100 to 4000 across the name. F1 tells a quieter story about openness. You could use both together as X/Y coordinates and plot the name as a trajectory through acoustic space rather than a bar chart — each sound becomes a point, and the connecting line traces a path.
+
+Want me to build that — the name as a trajectory through formant space?
+
+Interesting! Big I want to hear more about the name's origins.
+
+Mar 12
+
+Excavated Persian literary origins and etymological roots
+Excavated Persian literary origins and etymological roots
+The name comes from Persian and carries a remarkable literary history.
+
+The Shahnameh connection
+
+Takhmina is a character in Ferdowsi's Shahnameh (Book of Kings, ~1000 CE), one of the longest epic poems ever written and the foundational text of Persian literature. She is a princess — daughter of the king of Samangan — who comes to the hero Rostam in the night, offers herself as his wife, and conceives a child from a single night together before Rostam continues his journey. That child is Sohrab.
+
+The story that follows is one of the great tragedies of world literature: Rostam and Sohrab eventually meet on opposite sides of a battlefield without recognizing each other, and Rostam kills his own son. Takhmina disappears from the narrative after giving birth — she is the origin point of the tragedy, the hinge on which everything turns.
+
+Etymology
+
+From Persian takhm (تخم) — meaning seed, lineage, essence. The suffix -ina is a feminine softening. So the name means something close to she who carries the lineage or of noble origin. Given what happens in the Shahnameh, that meaning is almost unbearably literal.
+
+Geographic spread
+
+The name traveled with Persian cultural influence across Central Asia — it's most common today in Tajikistan, Uzbekistan, and Afghanistan. It's rare outside that region, which gives it a strong sense of place.
+
+What this means for the Abjad reading
+
+That KH=600 spike suddenly feels less arbitrary. The kh sound sits at the exact center of her name, and in the Abjad tradition large values carry weight and significance. 600 is the value of خ — a sound that doesn't exist in most European languages, a sound that marks the name as distinctly from somewhere.
+
+The formant trajectory idea still holds — but knowing the Shahnameh context adds another layer. You could almost think of the I (high front vowel, maximum tongue tension) as the moment of drama, and the dissolving final A as aftermath.
+
+Nice, I have a better feeling of how to proceed now! Looks like I need Arabic translation of "It is lunchtime, Takhmina!"
+
+Mar 12
+
+Deliberated Arabic phrasing and vocative particle placement
+Deliberated Arabic phrasing and vocative particle placement
+حانَ وقتُ الغداءِ يا تخمينا!
+
+Ḥāna waqtu l-ghadāʾi yā Takhmīnā!
+
+A few notes on the choices:
+
+حانَ (ḥāna) — "the time has come for," more evocative than a flat "it is." Carries a sense of arrival, of something due.
+
+يا (yā) — the Arabic vocative particle, used before a name when addressing someone directly. You can't just place the name at the end without it; yā is the hinge between the statement and the address. It has a calling quality — like raising your voice slightly across a room.
+
+الغداء (al-ghadāʾ) — specifically the midday meal, as distinct from breakfast (fuṭūr) or dinner (ʿashāʾ). No ambiguity.
+
+So the full feeling is closer to: "The hour of lunch has arrived, O Takhmina!" — which, for a daily reminder, is charmingly formal.
+
+If you're feeding this into an Abjad visualization, يا (yā = 11) and حانَ will add interesting values to work with — ح alone is 8, a relatively rare letter with its own weight.
+
+Can you translate "you are the marvel" to Arabic?
+
+Mar 12
+
+Identified straightforward translation task
+Identified straightforward translation task
+أنتِ العجب
+
+Anti l-ʿajab
+
+أنتِ (anti) — "you" in the feminine form. Arabic distinguishes grammatical gender; anta would be masculine. The ت at the end, pronounced with a slight i, marks that you're speaking to a woman.
+
+العجب (al-ʿajab) — wonder, marvel, astonishment. Not just "wonderful" as an adjective but the wonder itself — the noun. So the structure is literally "you are the marvel," with no verb needed. Arabic drops the copula (is/are) in present-tense statements like this, which makes it feel more like a declaration than a description.
+
+The phrase has a quality of mild, warm astonishment — not grandiose, but genuine. It would fit well alongside حانَ وقتُ الغداءِ يا تخمينا — the lunch announcement followed by this as a kind of aside.
+
+If you're building an Abjad visualization of the full message, العجب gives you: ع=70, ج=3, ب=2 — three small values that contrast nicely with the big numbers in her name.
+
+Can you translate Lunch for Takhmina in Morse
+
+Mar 19
+
+Methodically converted phrase into Morse code characters
+Methodically converted phrase into Morse code characters
+LUNCH FOR TAKHMINA
+
+Word	Letter	Morse
+LUNCH	L	· − · ·
+U	· · −
+N	− ·
+C	− · − ·
+H	· · · ·
+FOR	F	· · − ·
+O	− − −
+R	· − ·
+TAKHMINA	T	−
+A	· −
+K	− · −
+H	· · · ·
+M	− −
+I	· ·
+N	− ·
+A	· −
+What's nice here: TAKHMINA ends with a satisfying symmetry — it opens with a lone dash (T) and closes with dot-dash (A), and the H in the middle gives that burst of four dots again, just like in LUNCH. The two words share that H cluster, like a small echo.
+
+Want me to render this as a lamp visualization — pulses of light along the bulb?
+
+Can you write "You are the marvel, O Takhmina" In Arabic?
+
+Mar 31
+أنتِ العجبُ يا تخمينا
+
+Anti l-ʿajabu yā Takhmīnā
+
+One small grammatical note: العجب takes a slight case ending here — العجبُ (al-ʿajabu) with a ḍamma (the small curl above the final ب) because it's the predicate of the nominal sentence. In everyday written Arabic this vowel mark is usually omitted, but in careful or literary writing it appears.
+
+The phrase now has a genuine classical feel — the yā vocative before her name gives it the register of Ferdowsi or indeed of Arabic poetry. Fitting, given where her name comes from.
+
+Takhmina's birthday is tomorrow, and I have a small poem written in the style of Paterson movie (about 10 lines). I'm thinking of a presentational style: maybe an animation (maybe online) or a temporal object that would disappear after reading, what are your thoughts?
+
+Apr 5
+
+Weighed presentation modes honoring Paterson's minimalist aesthetic
+Weighed presentation modes honoring Paterson's minimalist aesthetic
+The Paterson aesthetic is important here — Jarmusch's film treats poems as private, unhurried, slightly accidental things. Driver writes in a plain notebook, never performs, rarely shares. The poem exists first for itself. That should shape the presentation.
+
+On animation
+
+A slow typewriter reveal — one line appearing at a time, with real pauses between — would honor the rhythm. No flourishes, no transitions, just the words arriving at their own pace. The danger is that animation can feel like it's editorializing, telling the reader how to feel. Paterson never does that.
+
+On ephemerality — this is the more interesting direction
+
+A few genuinely temporal forms:
+
+A disappearing web page — a link that works once, or for 24 hours, then returns a blank page or a single period. She'd know she read something that no longer exists. Burns & Nobles used to do something like this; it's more affecting than it sounds.
+A message that deletes itself while being read — the text slowly erases from the top as new lines appear at the bottom, so she can never re-read what passed. Forces full presence.
+A photograph of the handwritten poem sent at a specific time, with the note that you'll delete it from your side in an hour. The ephemerality is social, not technical — trust-based.
+A voice message — the most Paterson-appropriate, actually. He never reads aloud in the film either, but a quiet spoken reading has the warmth of occasion without spectacle. Voice messages disappear into the stream naturally.
+My honest instinct
+
+The self-erasing web page combined with the Arabic dedication — أنتِ العجبُ يا تخمينا — as a header feels right. She opens a link, reads the poem as it slowly reveals itself line by line, and after some hours the page goes dark. The Arabic above the English, the lamp aesthetic you've been building this week as a subtle visual frame.
+
+Would you like me to build that? I'd need the poem text — or you could share it and I can design around it.
+
+Web page is compelling. Where do you suggest to build it?
+
+Apr 5
+
+Weighed practical hosting options for ephemeral web pages
+Weighed practical hosting options for ephemeral web pages
+A few realistic options depending on how much friction you want:
+
+Zero setup
+
+Glitch.com — paste HTML, get an instant URL, no account required for basic use. You can set a script to serve the page only until a certain timestamp, then return blank. Simplest path.
+CodePen — even simpler, but the URL looks like a developer tool, which breaks the mood slightly.
+One-time link behavior
+
+Netlify (free tier) — deploy a static page in minutes via drag-and-drop. The ephemerality would be simulated: you manually delete or replace the page after she reads it, or build a small countdown into the page itself that blanks after a set time.
+Vercel — same ease, slightly more technical. Worth it if you want a clean custom URL.
+Genuinely self-destructing
+
+Privnote.com — designed exactly for one-read-then-gone messages. Very simple, but no visual control — you can't style it.
+A small Cloudflare Worker — a few lines of JavaScript that serve the page and flip a flag after the first visit. Free tier is generous. Requires maybe 20 minutes of setup.
+My suggestion
+
+Glitch or Netlify for the page itself — full visual control, the Arabic dedication, the slow reveal — combined with a JavaScript timer that after, say, 6 hours replaces everything with a single line in small type: "حانَ وقتُ الغداءِ" and nothing else. Not technically gone, but effectively so.
+
+Do you have a preference, or shall I build the page first and we sort hosting after?
+
+What about my github page?
+
+Apr 5
+Perfect — you already have the infrastructure and the aesthetic control. A few thoughts:
+
+The clean approach Create a separate repository (not a branch of your main site) — something like takhmina-b.github.io or a subdirectory like andresemenoff.github.io/t — short, unguessable enough to feel private. Send her that URL.
+
+Ephemerality on GitHub Pages Technically you just delete or replace the file after she's read it. That's manual but honest — the page genuinely ceases to exist. You could also build a JavaScript timer into the page itself: after a set number of hours the content fades to a single line or goes blank, so even if she revisits the URL she finds only a trace.
+
+Fits your existing aesthetic Your site is already minimal, which is exactly right for a Paterson-style poem. The poem page should feel like it belongs to the same sensibility — plain, unhurried, no decoration fighting the text.
+
+One practical note GitHub Pages can take a few minutes to deploy after a push, so build and test it today, then you control the reveal simply by sending the link tomorrow at the moment you want her to read it.
+
+Share the poem when you're ready and I'll build the page — the slow line-by-line reveal, the Arabic dedication as a header, and a quiet self-blanking timer. We can keep the lamp motif as a very subtle background element if you like, or leave it completely bare.
+
+Let's do andresemenoff.github.io/t. Let's have a placeholder poem, something like Lowell's A Fixed Idea: What torture lurks within a single thought
+When grown too constant; and however kind,
+However welcome still, the weary mind
+Aches with its presence. Dull remembrance taught
+Remembers on unceasingly; unsought
+The old delight is with us but to find
+That all recurring joy is pain refined,
+Become a habit, and we struggle, caught.
+You lie upon my heart as on a nest,
+Folded in peace, for you can never know
+How crushed I am with having you at rest
+Heavy upon my life. I love you so
+You bind my freedom from its rightful quest.
+In mercy lift your drooping wings and go.
+
+Show more
+Apr 5
+
+Architected minimal poetry page with reveal animation and Arabic dedication
+Architected minimal poetry page with reveal animation and Arabic dedication
+Here's the page. A preview should be visible above — but the reveal animation only plays fully in the actual browser. What it does:
+
+Structure
+
+Warm off-white paper ground, serifed type, nothing competing with the words
+Arabic dedication fades in first, transliteration below it in small italic
+Poem lines appear one by one at roughly the pace of slow reading
+Attribution appears last, quietly
+After 6 hours, everything fades out and only حانَ وقتُ الغداءِ remains — the lunch reminder becoming the final trace of a birthday poem
+To deploy Create a folder t/ in your GitHub Pages repository, put this index.html inside it, push. The page will be at andresemenoff.github.io/t within a few minutes.
+
+When you have the real poem, drop it in and I'll replace the Lowell — same structure, same pacing.
+
+Index
+Code · HTML 
+Looks very nice! And how to create the folder (in web browser)?
+
+Apr 5
+
+Deciphered browser-based folder creation workflow
+Deciphered browser-based folder creation workflow
+GitHub's web interface handles this with a small trick — you can't create a folder directly, but you create a file inside one and GitHub makes the folder automatically.
+
+Steps
+
+Go to your repository on github.com
+Click Add file → Create new file
+In the filename field at the top, type t/index.html — the moment you type the /, GitHub splits it and t/ becomes a folder automatically
+Paste the HTML content into the editor below
+Scroll down, click Commit changes
+That's it. The folder and file are created in one step, and GitHub Pages will serve it at andresemenoff.github.io/t within a minute or two.
+
+Here it is! A thousand ways
+There are thousands ways to cook a fish,
+    or sit on a bench cross-legged.
+There are thousands ways to drop the ball from 19th floor
+    and wathc it speeding towards the ground and grass below.
+There are thousands ways to ride a wave
+    at the pristine shores of the Pacific ocean.
+And many more to draw and apple -- or a bee.
+There are thousands ways to read a book or human's palm
+    that promises tornadoes and storms.
+Yet there is just one way to so tell you how
+    a thousand times I think about you.
+
+Apr 5
+
+Preserved original poem formatting and typography intact
+Preserved original poem formatting and typography intact
+Beautiful — and very Paterson in spirit. The indented lines are important, they carry the poem's breath. I'll preserve them exactly, typos included (those are yours to keep or fix).
+
+
+Replace Lowell placeholder with the real poem
+Replace Lowell placeholder with the real poem
+Now add the indent style:
+
+
+Edited a file, read a file
+Edited a file, read a file
+A few things I did deliberately:
+
+The indented continuation lines are italicized — they're subordinate, the breath after the statement, and italic makes that visual without adding any other decoration. The title A thousand ways stands alone before the gap, as a proper title should. The attribution footer is now empty since this is yours — if you want your name there, just say so.
+
+The closing couplet will land well with the slow reveal — by the time "Yet there is just one way" appears the reader has been in the rhythm long enough for it to feel earned.
+
+Index
+Code · HTML 
+Thanks!
+
+Apr 5
+Happy birthday to Takhmina! It's been a genuinely lovely project to work through — from the phonetic waveform of her name to the Shahnameh, the Abjad numbers, and now a poem dissolving into a lunch reminder after six hours. The whole week has had a nice internal logic to it.
+
+How should I reset the page disappearance?
+
+12:45 PM
+The timer is stored in localStorage under the key t_opened. To reset it — so the full reveal plays again — just clear that key.
+
+Quickest way: open the browser console on the page (F12 → Console tab) and run:
+
+javascript
+localStorage.removeItem('t_opened')
+Then refresh. The poem will reveal itself from the beginning.
+
+If you want to test the blanked state, you can force it by setting a past timestamp:
+
+javascript
+localStorage.setItem('t_opened', Date.now() - 7 * 60 * 60 * 1000)
+Then refresh — it will open already blanked, showing only حانَ وقتُ الغداءِ.
+
+One caveat: localStorage is per-browser and per-origin, so resetting it on your machine doesn't affect what Takhmina sees on hers. Her timer is entirely her own.
+
+Ok, let remove the italics
+
+12:47 PM
+
+Thinking about removing italic formatting from text
+Thinking about removing italic formatting from text
+Done — indented lines now just indent, no styling difference.
+
+Index
+Code · HTML 
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +464,22 @@
 <title>t</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Amiri:ital@0;1&display=swap');
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --bg:   #f7f4ee;
     --ink:  #1c1a16;
     --dim:  #9a9182;
     --gold: #b8935a;
   }
-
+ 
   html, body {
     height: 100%;
     background: var(--bg);
     color: var(--ink);
   }
-
+ 
   body {
     display: flex;
     flex-direction: column;
@@ -30,7 +488,7 @@
     min-height: 100vh;
     padding: 3rem 1.5rem;
   }
-
+ 
   .page {
     max-width: 420px;
     width: 100%;
@@ -38,7 +496,7 @@
     transition: opacity 2.4s ease;
   }
   .page.visible { opacity: 1; }
-
+ 
   /* Arabic dedication */
   .dedication {
     font-family: 'Amiri', serif;
@@ -53,7 +511,7 @@
     transition: opacity 1.8s ease;
   }
   .dedication.visible { opacity: 1; }
-
+ 
   .transliteration {
     font-family: 'IM Fell English', Georgia, serif;
     font-style: italic;
@@ -66,7 +524,7 @@
     transition: opacity 1.8s ease;
   }
   .transliteration.visible { opacity: 1; }
-
+ 
   /* Poem */
   .poem {
     font-family: 'IM Fell English', Georgia, serif;
@@ -74,7 +532,7 @@
     line-height: 2.05;
     color: var(--ink);
   }
-
+ 
   .line {
     display: block;
     opacity: 0;
@@ -84,16 +542,15 @@
   }
   .line.indent {
     padding-left: 2.2em;
-    font-style: italic;
   }
   .line.visible {
     opacity: 1;
     transform: translateY(0);
   }
-
+ 
   /* Stanza break */
   .gap { display: block; height: 1.2em; }
-
+ 
   /* Footer */
   .footer {
     margin-top: 3.4rem;
@@ -106,7 +563,7 @@
     transition: opacity 1.8s ease;
   }
   .footer.visible { opacity: 1; }
-
+ 
   /* Blanked state */
   .blanked .poem,
   .blanked .dedication,
@@ -118,7 +575,7 @@
   .blanked .remnant {
     opacity: 1 !important;
   }
-
+ 
   .remnant {
     font-family: 'Amiri', serif;
     font-size: 0.95rem;
@@ -136,51 +593,51 @@
 </style>
 </head>
 <body>
-
+ 
 <div class="page" id="page">
-
+ 
   <div class="dedication" id="dedication">أنتِ العجبُ يا تخمينا</div>
   <div class="transliteration" id="translit">anti l-ʿajabu yā takhmīnā</div>
-
+ 
   <div class="poem" id="poem">
     <span class="line">A thousand ways</span>
     <span class="gap"></span>
     <span class="line">There are thousands ways to cook a fish,</span>
     <span class="line indent">or sit on a bench cross-legged.</span>
-    <span class="line">There are thousands ways to drop the ball from the 19th floor</span>
-    <span class="line indent">and watch it speeding towards the ground and grass below.</span>
+    <span class="line">There are thousands ways to drop the ball from 19th floor</span>
+    <span class="line indent">and wathc it speeding towards the ground and grass below.</span>
     <span class="line">There are thousands ways to ride a wave</span>
-    <span class="line indent">at the pristine shores of the Pacific Ocean.</span>
-    <span class="line">And many more to draw an apple — or a bee.</span>
-    <span class="line">There are thousands ways to read a book or a human's palm</span>
+    <span class="line indent">at the pristine shores of the Pacific ocean.</span>
+    <span class="line">And many more to draw and apple — or a bee.</span>
+    <span class="line">There are thousands ways to read a book or human's palm</span>
     <span class="line indent">that promises tornadoes and storms.</span>
-    <span class="line">Yet there is just one way to tell you how</span>
+    <span class="line">Yet there is just one way to so tell you how</span>
     <span class="line indent">a thousand times I think about you.</span>
   </div>
-
+ 
   <div class="footer" id="footer"></div>
-
+ 
   <div class="remnant" id="remnant">حانَ وقتُ الغداءِ</div>
-
+ 
 </div>
-
+ 
 <script>
   // ── CONFIGURATION ──────────────────────────────────────────
   const LINE_DELAY_MS   = 1100;   // pause between each line appearing
   const BLANK_AFTER_MS  = 6 * 60 * 60 * 1000;  // blank after 6 hours
   // ───────────────────────────────────────────────────────────
-
+ 
   const page      = document.getElementById('page');
   const ded       = document.getElementById('dedication');
   const translit  = document.getElementById('translit');
   const footer    = document.getElementById('footer');
   const remnant   = document.getElementById('remnant');
   const lines     = Array.from(document.querySelectorAll('.line:not(.gap)'));
-
+ 
   // Check if already blanked (using sessionStorage so refresh still shows)
   const openedAt  = localStorage.getItem('t_opened');
   const now       = Date.now();
-
+ 
   if (openedAt && (now - parseInt(openedAt)) > BLANK_AFTER_MS) {
     blankNow();
   } else {
@@ -188,33 +645,33 @@
     reveal();
     setTimeout(blankGracefully, BLANK_AFTER_MS);
   }
-
+ 
   function reveal() {
     // Page fade-in
     requestAnimationFrame(() => {
       page.classList.add('visible');
     });
-
+ 
     // Dedication
     setTimeout(() => ded.classList.add('visible'), 600);
     setTimeout(() => translit.classList.add('visible'), 1400);
-
+ 
     // Lines, one by one
     const startDelay = 2600;
     lines.forEach((line, i) => {
       setTimeout(() => line.classList.add('visible'), startDelay + i * LINE_DELAY_MS);
     });
-
+ 
     // Footer after last line
     const footerDelay = startDelay + lines.length * LINE_DELAY_MS + 800;
     setTimeout(() => footer.classList.add('visible'), footerDelay);
   }
-
+ 
   function blankGracefully() {
     page.classList.add('blanked');
     setTimeout(() => remnant.style.opacity = '1', 3200);
   }
-
+ 
   function blankNow() {
     page.classList.add('visible');
     page.classList.add('blanked');
@@ -224,3 +681,4 @@
 </script>
 </body>
 </html>
+ 
